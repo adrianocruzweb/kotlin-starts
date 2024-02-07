@@ -1,6 +1,6 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-val systemUsers: MutableList<Int> = mutableListOf(1,2,3)
+/*val systemUsers: MutableList<Int> = mutableListOf(1,2,3)
 val sudoers: List<Int> = systemUsers
 
 fun addSystemUsers(newUser: Int) {
@@ -9,17 +9,32 @@ fun addSystemUsers(newUser: Int) {
 
 fun getSysSudoers(): List<Int> {
     return sudoers
+}*/
+
+val openIssues: MutableSet<String> = mutableSetOf("uniqueDescr1", "uniqueDescr2", "uniqueDescr3")
+
+fun addIssue(uniqueDesc: String): Boolean {
+   return openIssues.add(uniqueDesc)
 }
 
-//val openIssues: MutableSet<String> = mutableSetOf("uniqueDescr1", "uniqueDescr2", "uniqueDescr3")
-
+fun getStatusLog(isAdded: Boolean): String {
+    return if (isAdded) "Restered correctly." else "marked as duplicate and rejected."
+}
 
 fun main() {
-    addSystemUsers(4)
+    val aNewIssue: String = "uniqueDescr4"
+    val anIssueAlreadyIn: String = "uniqueDescr2"
+
+    println("Issue $aNewIssue ${getStatusLog(addIssue(aNewIssue))}")
+    println("Issue $anIssueAlreadyIn ${getStatusLog(addIssue(anIssueAlreadyIn))}")
+
+
+
+    /*addSystemUsers(4)
     println("Tot sudoers: ${getSysSudoers().size}")
     getSysSudoers().forEach {
         i -> println("Some useful info on user $i")
-    }
+    }*/
 
     /*val name = "Kotlin"
     //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
