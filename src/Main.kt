@@ -11,7 +11,7 @@ fun getSysSudoers(): List<Int> {
     return sudoers
 }*/
 
-val openIssues: MutableSet<String> = mutableSetOf("uniqueDescr1", "uniqueDescr2", "uniqueDescr3")
+/*val openIssues: MutableSet<String> = mutableSetOf("uniqueDescr1", "uniqueDescr2", "uniqueDescr3")
 
 fun addIssue(uniqueDesc: String): Boolean {
    return openIssues.add(uniqueDesc)
@@ -19,15 +19,42 @@ fun addIssue(uniqueDesc: String): Boolean {
 
 fun getStatusLog(isAdded: Boolean): String {
     return if (isAdded) "Restered correctly." else "marked as duplicate and rejected."
+}*/
+
+const val POINT_X_PASS: Int = 15
+val EZPassAccounts: MutableMap<Int, Int> = mutableMapOf(1 to 100, 2 to 100, 3 to 100)
+val EZPassRapport: Map<Int, Int> = EZPassAccounts
+
+fun updatePointsCredit(accountId: Int) {
+    if(EZPassAccounts.containsKey(accountId)) {
+        println("Updating account...")
+        EZPassAccounts[accountId] = EZPassAccounts.getValue(accountId) + POINT_X_PASS
+    } else {
+        println("Error: Trying to update a non-existing account (id: $accountId)")
+    }
+}
+
+fun accountsRepport() {
+    println("EZ-Pass report:")
+    EZPassRapport.forEach {
+        k,v -> println("ID $k: credit $v")
+    }
 }
 
 fun main() {
-    val aNewIssue: String = "uniqueDescr4"
+    accountsRepport()
+    updatePointsCredit(1)
+    updatePointsCredit(1)
+    updatePointsCredit(5)
+    accountsRepport()
+
+
+    /*val aNewIssue: String = "uniqueDescr4"
     val anIssueAlreadyIn: String = "uniqueDescr2"
 
     println("Issue $aNewIssue ${getStatusLog(addIssue(aNewIssue))}")
     println("Issue $anIssueAlreadyIn ${getStatusLog(addIssue(anIssueAlreadyIn))}")
-
+    */
 
 
     /*addSystemUsers(4)
