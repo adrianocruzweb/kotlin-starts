@@ -21,7 +21,7 @@ fun getStatusLog(isAdded: Boolean): String {
     return if (isAdded) "Restered correctly." else "marked as duplicate and rejected."
 }*/
 
-const val POINT_X_PASS: Int = 15
+/*const val POINT_X_PASS: Int = 15
 val EZPassAccounts: MutableMap<Int, Int> = mutableMapOf(1 to 100, 2 to 100, 3 to 100)
 val EZPassRapport: Map<Int, Int> = EZPassAccounts
 
@@ -39,14 +39,25 @@ fun accountsRepport() {
     EZPassRapport.forEach {
         k,v -> println("ID $k: credit $v")
     }
-}
+}*/
 
 fun main() {
-    accountsRepport()
+    val numbers = listOf(1,-2,3,-4,5,-6)
+
+    val positives = numbers.filter { x->x>0 }
+
+    val negatives = numbers.filter { it<0 }
+
+    println(numbers)
+    println(positives)
+    println(negatives)
+
+
+    /*accountsRepport()
     updatePointsCredit(1)
     updatePointsCredit(1)
     updatePointsCredit(5)
-    accountsRepport()
+    accountsRepport()*/
 
 
     /*val aNewIssue: String = "uniqueDescr4"
