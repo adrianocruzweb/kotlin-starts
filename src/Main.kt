@@ -44,13 +44,21 @@ fun accountsRepport() {
 fun main() {
     val numbers = listOf(1,-2,3,-4,5,-6)
 
-    val positives = numbers.filter { x->x>0 }
+    val doubled = numbers.map { x->x*2 }
+
+    val tripled = numbers.map { it*3 }
+
+    println(doubled)
+    println(tripled)
+
+
+    /*val positives = numbers.filter { x->x>0 }
 
     val negatives = numbers.filter { it<0 }
 
     println(numbers)
     println(positives)
-    println(negatives)
+    println(negatives)*/
 
 
     /*accountsRepport()
