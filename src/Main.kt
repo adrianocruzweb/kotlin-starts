@@ -42,14 +42,28 @@ fun accountsRepport() {
 }*/
 
 fun main() {
-    val numbers = listOf(1,-2,3,-4,5,-6)
+
+    val fruitBag = listOf("bananas", "grapes", "apples", "pears" )
+
+    val clothesBag = listOf("shirts","pants","jeans")
+
+    val cart = listOf(fruitBag,clothesBag)
+
+    val mapBag = cart.map{it}
+    val flatMapBag = cart.flatMap { it }
+
+    println(mapBag)
+    println(flatMapBag)
+
+
+    /*val numbers = listOf(1,-2,3,-4,5,-6)
 
     val anyNegative = numbers.any{it<0}
 
     val anyGT6 = numbers.any { it>6 }
 
     println(anyNegative)
-    println(anyGT6)
+    println(anyGT6)*/
 
     /*val doubled = numbers.map { x->x*2 }
 
