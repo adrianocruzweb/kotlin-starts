@@ -41,9 +41,24 @@ fun accountsRepport() {
     }
 }*/
 
+open class Dog{
+    open fun sayHello() {
+        println("wow wow!")
+    }
+}
+
+class Yorkshire: Dog(){
+    override fun sayHello() {
+        println("wif wif!")
+    }
+}
+
 fun main() {
 
-    val fruitBag = listOf("bananas", "grapes", "apples", "pears" )
+    val dog: Dog = Yorkshire()
+    dog.sayHello()
+
+    /*val fruitBag = listOf("bananas", "grapes", "apples", "pears" )
 
     val clothesBag = listOf("shirts","pants","jeans")
 
@@ -53,7 +68,7 @@ fun main() {
     val flatMapBag = cart.flatMap { it }
 
     println(mapBag)
-    println(flatMapBag)
+    println(flatMapBag)*/
 
 
     /*val numbers = listOf(1,-2,3,-4,5,-6)
